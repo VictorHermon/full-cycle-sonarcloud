@@ -13,6 +13,6 @@ jobs:
         uses: actions/setup-go@v6
         with:
           go-version: 1.26
-      - run: go mod init
+      - run: go mod init mysum
       - name: Test with coverprofile
         run: go test -coverprofile=coverage.out
