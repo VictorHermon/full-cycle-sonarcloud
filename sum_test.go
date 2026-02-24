@@ -20,7 +20,20 @@ func TestSub(t *testing.T) {
 	}
 }
 
-func TestMain(t *testing.T) {
+func TestMult(t *testing.T) {
 
-	main()
+	resultado := mult(6, 7)
+
+	if resultado != 42 {
+		t.Errorf("Resultado = %d; esperado 42", resultado)
+	}
+}
+
+func TestDiv(t *testing.T) {
+
+	resultado := div(20, 4)
+
+	if resultado != 5 {
+		t.Errorf("Resultado = %d; esperado 5", resultado)
+	}
 }

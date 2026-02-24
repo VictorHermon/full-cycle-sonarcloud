@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - name: Set up Go version
         uses: actions/setup-go@v6
         with:
@@ -16,3 +18,7 @@ jobs:
       - run: go mod init mysum
       - name: Test with coverprofile
         run: go test -coverprofile=coverage.out
+      - name: SonarQube  Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{  secrets.SONAR_TOKEN  }}
